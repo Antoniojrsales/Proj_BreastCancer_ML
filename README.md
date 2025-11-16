@@ -1,5 +1,5 @@
-# Proj_ML_BreastCancer
-O objetivo deste projeto é explorar e analisar o famoso dataset BreastCancer, aplicando técnicas de análise exploratória de dados (EDA) e visualizações, com o intuito de compreender melhor as características das amostras malignas (0) e benignas (1) e suas relações. O projeto também visa preparar o terreno para possíveis aplicações de modelos de aprendizado de máquina.
+# 🚀 Projeto: Previsão de Malignidade de Tumores usando Modelos de Classificação
+O objetivo deste projeto é desenvolver, avaliar e otimizar um modelo de Machine Learning (Classificação Binária) capaz de prever o diagnóstico de tumores (maligno/benigno), demonstrando o pipeline completo de Análise Exploratória, Pré-processamento (Escalonamento) e Seleção de Features, utilizando o dataset Breast Cancer (Wisconsin).
 
 ## ✅ Etapas de Inicialização
 
