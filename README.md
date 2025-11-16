@@ -61,6 +61,15 @@ pip install -r requirements.txt
 A etapa de Análise Exploratória foi essencial para validar a integridade do dataset e identificar padrões que guiarão a modelagem.
 
 **1. Estrutura e Qualidade dos Dados**
-* Dimensões: O dataset contém 569 amostras de pacientes e 31 colunas (30 features + 1 coluna alvo, target).
+* **Dimensões:** O dataset contém 569 amostras de pacientes e 31 colunas (30 features + 1 coluna alvo, target).
+* **Integridade:** Confirmamos que o dataset é extremamente limpo, não possuindo valores nulos (NaN) ou linhas duplicadas. Não foi necessário aplicar métodos de imputação ou limpeza de dados.
 
-* Integridade: Confirmamos que o dataset é extremamente limpo, não possuindo valores nulos (NaN) ou linhas duplicadas. Não foi necessário aplicar métodos de imputação ou limpeza de dados.
+**2. Análise da Variável Alvo e Distribuição**
+* **Classes:** A variável alvo, target, é binária, representando os diagnósticos: 0 (Benigno) e 1 (Maligno).
+* **Desbalanceamento:** A distribuição de classes é levemente desbalanceada, com 63% de casos Benignos (357 amostras) e 37% de casos Malignos (212 amostras). Essa proporção é gerenciável, mas requer o uso de métricas de avaliação robustas (como F1-Score e ROC-AUC).
+
+**3. Insights Chave para a Modelagem**
+A análise descritiva por classe (groupby().describe()) e as visualizações (Boxplots) revelaram as seguintes conclusões de alto impacto:
+
+* **Forte Poder Discriminatório:** As features relacionadas ao tamanho e área do tumor, como mean radius, mean perimeter, e mean area, mostraram as maiores disparidades nas estatísticas (média, mediana) entre as classes maligna e benigna. Isso indica que são os preditores mais importantes do modelo.
+* **Correlação:** A visualização do Heatmap de correlação confirmou altas correlações entre features de mesma natureza (ex: mean radius e mean perimeter), uma informação crucial para a etapa de tratamento de multicolinearidade (se necessário).
