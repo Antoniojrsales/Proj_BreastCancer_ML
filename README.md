@@ -61,6 +61,6 @@ pip install -r requirements.txt
 A etapa de Análise Exploratória foi essencial para validar a integridade do dataset e identificar padrões que guiarão a modelagem.
 
 **1. Estrutura e Qualidade dos Dados**
--Dimensões: O dataset contém 569 amostras de pacientes e 31 colunas (30 features + 1 coluna alvo, target).
+* Dimensões: O dataset contém 569 amostras de pacientes e 31 colunas (30 features + 1 coluna alvo, target).
 
--Integridade: Confirmamos que o dataset é extremamente limpo, não possuindo valores nulos (NaN) ou linhas duplicadas. Não foi necessário aplicar métodos de imputação ou limpeza de dados.
+* Integridade: Confirmamos que o dataset é extremamente limpo, não possuindo valores nulos (NaN) ou linhas duplicadas. Não foi necessário aplicar métodos de imputação ou limpeza de dados.
