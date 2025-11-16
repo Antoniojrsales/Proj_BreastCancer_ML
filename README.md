@@ -12,11 +12,8 @@ O objetivo deste projeto é explorar e analisar o famoso dataset BreastCancer, a
 ## 📁 Estrutura Inicial de Pastas
 
 ```
-Proj_ML_BreastCancer/
-├── analysis/
+Proj_BreastCancer_ML/
 ├── data/
-│   ├── raw/           # dados originais
-│   ├── processed/     # dados tratados
 ├── analysis/
 │   ├── eda/           # análises exploratórias
 │   ├── reports/       # gráficos e relatórios gerados
