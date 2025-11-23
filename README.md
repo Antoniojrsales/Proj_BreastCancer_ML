@@ -15,11 +15,12 @@ O objetivo deste projeto é desenvolver, avaliar e otimizar um modelo de Machine
 Proj_BreastCancer_ML/
 ├── data/
 ├── analysis/
-│   ├── eda/           # análises exploratórias
-│   ├── reports/       # gráficos e relatórios gerados
+│   ├── data_processing/       # análises exploratórias
+|   ├── data_preprocessing/    # tratamento de Dados para Modelagem
+│   ├── reports/               # gráficos e relatórios gerados
 ├── ML/
-│   ├── models/        # arquivos de modelos salvos
-│   ├── notebooks/     # experimentos em Jupyter
+│   ├── models/                # arquivos de modelos salvos
+│   ├── notebooks/             # experimentos em Jupyter
 ├── venv/
 ├── .gitignore
 ├── LICENSE
@@ -73,6 +74,9 @@ A análise descritiva por classe (groupby().describe()) e as visualizações (Bo
 
 * **Forte Poder Discriminatório:** As features relacionadas ao tamanho e área do tumor, como mean radius, mean perimeter, e mean area, mostraram as maiores disparidades nas estatísticas (média, mediana) entre as classes maligna e benigna. Isso indica que são os preditores mais importantes do modelo.
 * **Correlação:** A visualização do Heatmap de correlação confirmou altas correlações entre features de mesma natureza (ex: mean radius e mean perimeter), uma informação crucial para a etapa de tratamento de multicolinearidade (se necessário).
+
+
+## 📊 Análise Insights da Análise Visual
 
 Gráfico | Objetivo Analítico | Insights Revelados | [Imagem/Visualização]
 | :--- | :--- | :--- | :--- |
