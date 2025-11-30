@@ -84,3 +84,22 @@ Gráfico | Objetivo Analítico | Insights Revelados | [Imagem/Visualização]
 | **Boxplot & Histograma:** | Visualizar a distribuição da feature mais discriminatória (mean radius). | Separabilidade Forte: O Histograma (com densidade de probabilidade sobreposta) e o Boxplot mostram que a distribuição de tumores Malignos (target=1) está concentrada em valores de mean radius significativamente maiores e com pouca sobreposição com a distribuição dos tumores Benignos. | ![Box Chart Classes](img/Grafico_Histogram.png)|
 | **Heatmap de Correlação** | Identificar a multicolinearidade e o relacionamento entre todas as 30 features. | Revelou altíssima correlação ($\approx +0.99$) entre features de mesma natureza (Ex: mean radius, mean perimeter e mean area). Isso indica redundância de informação, que deverá ser tratada com a Seleção de Features para estabilizar modelos lineares. | ![HeatMap Chart Classes](img/Grafico_HeatMap.png)|
 | **Gráfico de Dispersão (Scatter Plot):** | Provar visualmente a correlação entre as features e a separabilidade das classes. | Confirma a correlação forte entre mean radius e mean area (reta de tendência clara) e demonstra que os tumores Malignos formam um aglomerado distinto na parte superior direita do gráfico. | ![Scatter Chart Classes](img/Grafico_Scatter.png)|
+
+## ⚙️ Pré-processamento e Estabilização dos Dados
+
+A etapa de pré-processamento foi focada na estabilização das features e na preparação do dataset para o consumo por modelos de Machine Learning (ML), como a Regressão Logística.
+
+**1. Seleção de Features (Tratamento de Multicolinearidade)**
+ Com base no Heatmap de Correlação, identificamos o problema de multicolinearidade (correlação $r \approx 0.99$ entre features de mesmo significado, como mean radius e mean perimeter).
+  * **Ação:** Removemos **11 features redundantes** para estabilizar o modelo linear. O dataset foi reduzido de **30 para 19 features.**
+  * **Status do Dataset:** O DataFrame foi salvo como breast_cancer_cleaned.csv para servir como a fonte de dados limpa para a fase de Modelagem.
+
+**2. Divisão e Escalonamento dos Dados (Preparação Final)**
+
+Na fase de Modelagem, os dados limpos serão carregados e submetidos às seguintes transformações obrigatórias:
+
+* **Divisão (Train/Test Split):** Os dados serão divididos em 80% para Treino e 20% para Teste (usando test_size=0.20), com a aplicação de estratificação para manter a proporção correta de classes Benigno/Maligno em ambos os conjuntos.
+
+* **Escalonamento (StandardScaler):** Será aplicado o StandardScaler para padronizar os dados (média 0 e desvio padrão 1). Esta etapa é vital para que features de diferentes escalas não dominem o treinamento.
+
+* **Regra de Ouro (Data Leakage):** O StandardScaler será treinado (fit) exclusivamente no conjunto de treino e, em seguida, aplicado (transform) aos conjuntos de treino e teste.
