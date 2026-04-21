@@ -24,7 +24,11 @@ def split_data(df: pd.DataFrame, test_size: float = 0.2, random_state: int = 42)
 
     # Usa 80/20 (0.2) e estratifica para manter o balanceamento
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=test_size, stratify=y, random_state=random_state
+        X, y, 
+        test_size=test_size, 
+        stratify=y, 
+        random_state=random_state, 
+        shuffle=True
     )
     return X_train, X_test, y_train, y_test
 
